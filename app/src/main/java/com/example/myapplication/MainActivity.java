@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -28,14 +29,21 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_items, menu);
         return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        System.out.println(item);
+        return true;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
+        //Toolbar settings = (Toolbar)findViewById(R.id.settings);
+
+
 
 
         Button calcButton = (Button)findViewById(R.id.Calculate);
@@ -53,12 +61,13 @@ public class MainActivity extends AppCompatActivity {
         UnitsConverter.LengthUnits fromLength = UnitsConverter.LengthUnits.Meters;
         UnitsConverter.LengthUnits toLength = UnitsConverter.LengthUnits.Yards;
 
+
+
         calcButton.setOnClickListener(v -> {
             UnitsConverter con = new UnitsConverter();
 
 
             try{
-
               if(!isVol) {
                   double d = Double.parseDouble(from.getText().toString());
                   to.setText(con.convert(d, fromLength, toLength) + "");
