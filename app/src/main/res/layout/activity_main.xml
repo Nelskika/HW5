@@ -10,8 +10,11 @@
         android:id="@+id/Calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Calculate"
+        app:layout_constraintEnd_toStartOf="@+id/clear"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toFeild" />
 
@@ -19,8 +22,11 @@
         android:id="@+id/clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Clear"
+        app:layout_constraintEnd_toStartOf="@+id/mode"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Calculate"
         app:layout_constraintTop_toBottomOf="@+id/toFeild" />
 
@@ -28,19 +34,25 @@
         android:id="@+id/mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/clear"
         app:layout_constraintTop_toBottomOf="@+id/toFeild" />
 
     <EditText
         android:id="@+id/toFeild"
-        android:layout_width="236dp"
+        android:layout_width="0dp"
         android:layout_height="39dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:hint="Result"
         android:inputType="number|numberSigned|numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/toUnits"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/to" />
 
@@ -48,42 +60,50 @@
         android:id="@+id/fromLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
         android:text="Meters"
-        app:layout_constraintBottom_toBottomOf="@+id/fromFeild"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fromFeild"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/Friom"
         android:layout_width="87dp"
         android:layout_height="21dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="From"
+        app:layout_constraintBottom_toTopOf="@+id/fromFeild"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/fromFeild"
-        android:layout_width="235dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:hint="Enter Value"
         android:inputType="number|numberSigned|numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/to"
+        app:layout_constraintEnd_toStartOf="@+id/fromLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Friom" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="176dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
         android:text="Converter App"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,19 +113,23 @@
         android:id="@+id/toUnits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="Yards"
-        app:layout_constraintBottom_toBottomOf="@+id/toFeild"
+        app:layout_constraintBaseline_toBaselineOf="@+id/toFeild"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/toFeild" />
 
     <TextView
         android:id="@+id/to"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="To"
+        app:layout_constraintBottom_toTopOf="@+id/toFeild"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fromFeild" />
 
